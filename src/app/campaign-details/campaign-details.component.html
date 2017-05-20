@@ -1,12 +1,13 @@
-<a href="#" class="btn btn-link" [routerLink]="['/']">
+
+    <div class="card px-1">
+      <a href="#" class="btn btn-link" [routerLink]="['/']">
   <Campaigns</a>
-    <div class="card">
       <div id="carouselExampleControls" data-interval="false" class="carousel slide card">
         <div class="carousel-inner" role="listbox">
           <div *ngFor="let img of campaignDetails.images; let ii=index" [ngClass]="{'active': ii==0 }" class="carousel-item">
             <div class="carousel-caption d-md-block">
             </div>
-            <img class="d-block img-fluid" src="{{img}}">
+            <img class="d-block" style="width: 100%" src="{{img}}">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -21,7 +22,7 @@
       <div class="card-block">
         <h4 class="card-title">{{campaignDetails.name}}</h4>
         <p class="card-text">{{campaignDetails.detailDescription}}.</p>
-        <div class="row align-items-center">
+        <div class="row mx-0 align-items-center card-text">
           <span class="align-middle"><strong>Number of Kids:</strong></span>
             <div class="input-group mx-2" style="width: 175px">
               <span class="input-group-btn">
@@ -40,7 +41,6 @@
         </div>
         <br>
         <div class="row">
-          
           <a href="#" class="btn btn-primary">Donate</a>
         </div>
       </div>

@@ -10,9 +10,9 @@ export let campaignDetailData =
         "ngoId": 0,
         "ngoName": "Coloring Life",
         "images": [
-            "http://lorempixel.com/800/250?2323",
-            "http://lorempixel.com/800/250?444232344",
-            "http://lorempixel.com/800/250?54546"
+            "http://lorempixel.com/500/300?2323",
+            "http://lorempixel.com/500/300?444232344",
+            "http://lorempixel.com/500/300?54546"
         ],
         "eventImagesLink": "",
         "paymentModel": {
