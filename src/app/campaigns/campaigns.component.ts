@@ -1,3 +1,5 @@
+import { campaignData } from './campaignsData';
+import { HttpModule, Http } from '@angular/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CampaignsComponent implements OnInit {
 
-  constructor() { }
+  public causes: any[];
+  constructor(private http: Http) { }
 
   ngOnInit() {
+    let rawData: any[] = JSON.parse(campaignData);
+    this.causes = rawData.sort(
+      (campaign1: any, campaign2: any) => campaign1.displayOrder - campaign2.displayOrder
+    );
   }
 
 }

@@ -1,5 +1,4 @@
 import { CampaignsComponent } from './campaigns/campaigns.component';
-import { CausesComponent } from './causes/causes.component';
 import { routes } from './../routes';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,12 +7,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { RouterModule } from "@angular/router";
+import { CampaignDetailsComponent } from './campaign-details/campaign-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CausesComponent,
-    CampaignsComponent
+    CampaignsComponent,
+    CampaignDetailsComponent
   ],
   imports: [
     BrowserModule,

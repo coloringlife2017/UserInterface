@@ -1,8 +1,8 @@
+import { CampaignDetailsComponent } from './app/campaign-details/campaign-details.component';
 import { CampaignsComponent } from './app/campaigns/campaigns.component';
-import { CausesComponent } from './app/causes/causes.component';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    { path: '', component: CausesComponent },
-    { path: 'campaigns', component: CampaignsComponent }
+    { path: '', component: CampaignsComponent },
+    { path: 'campDetail/:campId', component: CampaignDetailsComponent}
 ];
