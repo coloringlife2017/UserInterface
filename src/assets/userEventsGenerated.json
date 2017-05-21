@@ -1,0 +1,158 @@
+{
+  "{{objectId()}}": {
+    "audit": {
+      "createTime": "2017-02-06T03:39:35 +05:00",
+      "createdBy": "sherischwartz@exotechno.com",
+      "updateTime": "2017-01-11T05:20:06 +05:00",
+      "updatedBy": "sherischwartz@exotechno.com"
+    },
+    "id": "5921bcd38c9e6b70eefb4424",
+    "name": "Birthday",
+    "dateTime": {
+      "endDataTime": "2017-04-19T10:27:14 +04:00",
+      "startDateTime": "2017-05-05T06:11:10 +04:00"
+    },
+    "location": {
+      "city": "Lowgap",
+      "fullAddress": "820 Hendrickson Place, Graniteville, California, 6090",
+      "latLong": "-14.134929,-12.66373",
+      "state": "Massachusetts",
+      "country": "USA"
+    },
+    "guestList": [
+      {
+        "fullName": "Terry Mcdaniel",
+        "email": "terrymcdaniel@exotechno.com",
+        "invitationSent": {
+          "sent": "N",
+          "delivered": "N"
+        },
+        "reminderSent": {
+          "sent": "N",
+          "delivered": "N"
+        },
+        "rsvp": {
+          "rsvpStatus": "NOT_YET_RESPONDED",
+          "rsvpDateTime": "",
+          "comments": "",
+          "device": "",
+          "location": ""
+        },
+        "donation": {
+          "notificationType": "HOST_ONLY_INCLUDE_AMOUNT",
+          "amount": 0
+        }
+      },
+      {
+        "fullName": "Manuela Raymond",
+        "email": "manuelaraymond@exotechno.com",
+        "invitationSent": {
+          "sent": "N",
+          "delivered": "N"
+        },
+        "reminderSent": {
+          "sent": "N",
+          "delivered": "N"
+        },
+        "rsvp": {
+          "rsvpStatus": "NOT_YET_RESPONDED",
+          "rsvpDateTime": "",
+          "comments": "",
+          "device": "",
+          "location": ""
+        },
+        "donation": {
+          "notificationType": "HOST_ONLY_INCLUDE_AMOUNT",
+          "amount": 0
+        }
+      },
+      {
+        "fullName": "Rosalyn Fields",
+        "email": "rosalynfields@exotechno.com",
+        "invitationSent": {
+          "sent": "N",
+          "delivered": "N"
+        },
+        "reminderSent": {
+          "sent": "N",
+          "delivered": "N"
+        },
+        "rsvp": {
+          "rsvpStatus": "NOT_YET_RESPONDED",
+          "rsvpDateTime": "",
+          "comments": "",
+          "device": "",
+          "location": ""
+        },
+        "donation": {
+          "notificationType": "HOST_ONLY_INCLUDE_AMOUNT",
+          "amount": 0
+        }
+      },
+      {
+        "fullName": "Estes Carlson",
+        "email": "estescarlson@exotechno.com",
+        "invitationSent": {
+          "sent": "N",
+          "delivered": "N"
+        },
+        "reminderSent": {
+          "sent": "N",
+          "delivered": "N"
+        },
+        "rsvp": {
+          "rsvpStatus": "NOT_YET_RESPONDED",
+          "rsvpDateTime": "",
+          "comments": "",
+          "device": "",
+          "location": ""
+        },
+        "donation": {
+          "notificationType": "HOST_ONLY_INCLUDE_AMOUNT",
+          "amount": 0
+        }
+      },
+      {
+        "fullName": "Sherry Hobbs",
+        "email": "sherryhobbs@exotechno.com",
+        "invitationSent": {
+          "sent": "N",
+          "delivered": "N"
+        },
+        "reminderSent": {
+          "sent": "N",
+          "delivered": "N"
+        },
+        "rsvp": {
+          "rsvpStatus": "NOT_YET_RESPONDED",
+          "rsvpDateTime": "",
+          "comments": "",
+          "device": "",
+          "location": ""
+        },
+        "donation": {
+          "notificationType": "HOST_ONLY_INCLUDE_AMOUNT",
+          "amount": 0
+        }
+      }
+    ],
+    "invitationDescription": "Labore sint Lorem nostrud officia do adipisicing nulla et ad anim. Incididunt ipsum velit est cillum commodo sint labore commodo anim incididunt labore occaecat consequat officia. Ut consectetur magna aliqua eu minim est ex adipisicing.\r\n",
+    "hostInfo": {
+      "name": "Randolph",
+      "phones": [
+        "(836) 460-2636",
+        "(994) 449-3545"
+      ],
+      "emails": [
+        "randolphhobbs@exotechno.com",
+        "randolphhobbs@exotechno.com"
+      ]
+    },
+    "privacy": {
+      "guestListVisibility": "HOST_ONLY",
+      "allowGuestsToUploadPicutres": "Y"
+    },
+    "campaignImages": "",
+    "eventImages": ""
+  }
+}

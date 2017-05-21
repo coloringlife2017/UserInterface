@@ -1,0 +1,61 @@
+{
+   "{{objectId()}}": {
+       "audit":{
+        "createTime" : '{{date(new Date(2017, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+          "createdBy" : '{{email()}}',
+        "updateTime" : '{{date(new Date(2017, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+        "updatedBy" : '{{email()}}'
+      },
+     "id": "{{objectId()}}",
+    "name": "Birthday",
+    "dateTime" : {
+        "endDataTime" : '{{date(new Date(2017, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}',
+        "startDateTime" :'{{date(new Date(2017, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss Z")}}'
+      },
+    "location": {
+        "city": "{{city()}}",
+        "fullAddress": "{{integer(100, 999)}} {{street()}}, {{city()}}, {{state()}}, {{integer(100, 10000)}}",
+        "latLong": "{{floating(-90.000001, 90)}},{{floating(-90.000001, 90)}}",
+        "state": "{{state()}}",
+        "country": "USA"
+    },
+    "guestList":[
+      "{{repeat(5)}}",
+        {
+            "fullName": "{{firstName()}} {{surname()}}",
+            "email": "{{email()}}",
+            "invitationSent": {
+                "sent": "N",
+                "delivered": "N"
+            },
+            "reminderSent": {
+                "sent": "N",
+                "delivered": "N"
+            },
+            "rsvp": {
+                "rsvpStatus": "NOT_YET_RESPONDED",
+                "rsvpDateTime": "",
+                "comments": "",
+                "device": "",
+                "location": ""
+            },
+            "donation":{
+                "notificationType": "HOST_ONLY_INCLUDE_AMOUNT",
+                "amount": "0.00"
+            }
+        }
+    ],
+    "invitationDescription": "{{lorem(1, 'paragraphs')}}",
+    "hostInfo": {
+        "name": "{{firstName()}}",
+        "phones": ["{{phone()}}", "{{phone()}}"],
+        "emails": ["{{email()}}", "{{email()}}"]
+    },
+    "privacy": {
+        "guestListVisibility": "HOST_ONLY",
+        "allowGuestsToUploadPicutres": "Y"
+    },
+    "campaignImages": "",
+    "eventImages": ""
+}
+}

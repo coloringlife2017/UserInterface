@@ -1,0 +1,65 @@
+<div class="card py-2 col-lg-12 col-sm-12" style="background-color: white">
+
+  <img class="card-img-top" src="https://unsplash.it/200/300" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Happy Birthday {{userEvent.name}}</h4>
+    <p class="card-text">{{userEvent.invitationDescription}}</p>
+
+  </div>
+
+
+  <div class="form-group row">
+    <label class="col-12 col-form-label">Happy Birthday To:</label>
+    <div class="col-12">
+      <input class="form-control" type="text" [(ngModel)]="userEvent.name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-12 col-form-label">Invitation:</label>
+    <div class="col-12">
+      <textarea class="form-control" rows="5" placeholder="Write your invitation here" [(ngModel)]="userEvent.invitationDescription"></textarea>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-12 col-form-label">Venue:</label>
+    <div class="col-12">
+      <textarea class="form-control" rows="2" placeholder="Enter complete address" [(ngModel)]="userEvent.location.fullAddress"></textarea>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-12 col-form-label">Start Date and time:</label>
+    <div class="col-12">
+      <input class="form-control" type="datetime-local" [(ngModel)]="userEvent.dateTime.startDateTime">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-12 col-form-label">End Date and time:</label>
+    <div class="col-12">
+      <input class="form-control" type="datetime-local" [(ngModel)]="userEvent.dateTime.endDataTime">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-12 col-form-label">Contact Number(s):</label>
+    <div class="col-12">
+      <input class="form-control" type="tel" [(ngModel)]="userEvent.hostInfo.phones" placeholder="You can enter comma separated numbers">
+    </div>
+  </div>
+<div class="form-group row">
+  <label class="col-12 col-form-label">Invite guests:</label>
+  <div *ngFor="let guest of userEvent.guestList; let gIndex = index" class="input-group col-12">
+    <input type="text" 
+    [(ngModel)]="guest.email"
+    class="form-control" placeholder="Enter guest's email">
+    <span class="input-group-btn ">
+        <button (click)="addGuest()" *ngIf="gIndex+1 === userEvent.guestList.length" class="btn btn-secondary" type="button">+</button>
+      </span>
+  </div>
+</div>
+  <div class="form-group row">
+    <label class="col-12 col-form-label">Whom would you like to help?</label>
+    <div class="col-sm-12 col-lg-4">
+      <a [routerLink]="['/campaigns']" class="btn btn-primary">Choose campaign</a>
+    </div>
+  </div>
+  
+</div>

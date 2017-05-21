@@ -1,0 +1,41 @@
+{
+  "CL1": {
+    "audit": {
+      "createTime": "2017-02-07T02:50:06 +05:00",
+      "createdBy": "Felecia",
+      "updateTime": "2017-04-27T12:01:35 +04:00",
+      "updatedBy": "Madge"
+    },
+    "campaignId": 0,
+    "dateTime": {
+      "endDataTime": "2017-05-11T05:54:36 +04:00",
+      "startDateTime": "2017-04-24T02:52:00 +04:00"
+    },
+    "detailDescription": "Ad deserunt quis officia ullamco cillum non. Sunt incididunt velit amet officia consequat cillum excepteur laboris. Sunt magna occaecat eiusmod non adipisicing nisi deserunt deserunt mollit laboris sit. Est consectetur tempor velit nisi. Nisi eu nisi anim elit sint quis Lorem excepteur duis ad proident officia voluptate esse. Sit non duis sit elit duis anim. Voluptate magna irure excepteur culpa.\r\nUt non veniam ullamco culpa veniam. Aliquip Lorem ut fugiat nisi excepteur. In adipisicing ea aliquip laborum commodo elit deserunt quis commodo irure voluptate.\r\n",
+    "displayOrder": 2,
+    "eventImagesLink": "",
+    "images": [
+      "http://lorempixel.com/500/300?2323",
+      "http://lorempixel.com/500/300?444232344",
+      "http://lorempixel.com/500/300?54546"
+    ],
+    "location": {
+      "city": "Sena",
+      "fullAddress": "923 Visitation Place, Detroit, Northern Mariana Islands, 6015",
+      "latLong": "-6.046649,77.386861",
+      "state": "Nevada"
+    },
+    "name": "Impeach enim",
+    "ngoId": 0,
+    "ngoName": "Coloring consectetur",
+    "paymentModel": {
+      "maxPayment": 588,
+      "minPayment": 148,
+      "modelType": "UNIT",
+      "paymentCurrency": "USD",
+      "targetAmount": 1584,
+      "unitDenomination": 10
+    },
+    "shortDescription": "Laborum cupidatat sint incididunt culpa ipsum velit laborum dolore exercitation anim voluptate exercitation ex in. Sit id voluptate dolor aliqua elit nulla elit eiusmod consequat. Excepteur sunt esse est duis adipisicing in adipisicing nisi tempor irure nisi adipisicing consectetur. Adipisicing minim culpa laborum labore labore ut reprehenderit ea Lorem deserunt labore officia laborum. Do commodo id ipsum occaecat aliquip duis ipsum est ut in magna esse irure velit. Eiusmod duis ullamco dolor laborum eiusmod non cillum proident elit aute adipisicing exercitation pariatur. Deserunt velit ullamco eiusmod fugiat non eiusmod deserunt irure.\r\n"
+  }
+}

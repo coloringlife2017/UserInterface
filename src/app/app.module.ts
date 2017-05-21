@@ -1,3 +1,4 @@
+import { UserEvent } from './user-event/dto/UserEvent';
 import { CampaignDetailsService } from './campaign-details/campaign-details.service';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { routes } from './../routes';
@@ -12,6 +13,7 @@ import { CampaignDetailsComponent } from './campaign-details/campaign-details.co
 
 import { AngularFireModule } from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { UserEventComponent } from './user-event/user-event.component';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCJx7rvrkYitHD838_0-DtKoxin30_H2q4",
@@ -26,7 +28,8 @@ const firebaseConfig = {
   declarations: [
     AppComponent,
     CampaignsComponent,
-    CampaignDetailsComponent
+    CampaignDetailsComponent,
+    UserEventComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
   ],
-  providers: [CampaignDetailsService],
+  providers: [CampaignDetailsService, UserEvent],
   bootstrap: [AppComponent]
 })
 export class AppModule {
