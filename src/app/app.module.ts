@@ -1,3 +1,4 @@
+import { CampaignDetailsService } from './campaign-details/campaign-details.service';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { routes } from './../routes';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +10,18 @@ import { AppComponent } from './app.component';
 import { RouterModule } from "@angular/router";
 import { CampaignDetailsComponent } from './campaign-details/campaign-details.component';
 
+import { AngularFireModule } from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCJx7rvrkYitHD838_0-DtKoxin30_H2q4",
+    authDomain: "coloringlife-fc2a8.firebaseapp.com",
+    databaseURL: "https://coloringlife-fc2a8.firebaseio.com",
+    projectId: "coloringlife-fc2a8",
+    storageBucket: "coloringlife-fc2a8.appspot.com",
+    messagingSenderId: "1016268436646"
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,9 +32,11 @@ import { CampaignDetailsComponent } from './campaign-details/campaign-details.co
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [CampaignDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
