@@ -5,13 +5,24 @@ import { Injectable } from "@angular/core";
 export class CampaignDetailsService {
 
     private readonly entityName: string = "campaignDetails";
-    constructor(private db: AngularFireDatabase) { }
-
-    public getCampigns() {
-        return this.db.list(this.entityName);
+    constructor(private db: AngularFireDatabase) {
     }
 
-    public getCampaignById() {
+    public getCampigns() {
 
+        return this.db.list(this.entityName, {
+            query: {
+                orderByChild: "displayOrder"
+            }
+        });
+    }
+
+    public getCampaignById(campaignKey:string) {
+        return this.db.list(this.entityName, {
+            query: {
+                orderByKey: true,
+                equalTo: campaignKey
+            }
+        });
     }
 }

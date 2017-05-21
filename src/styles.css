@@ -5,3 +5,10 @@ app-root, body {
   justify-content: center;
   background-color: black;
 }
+
+.full-height{
+    height: 100%
+}
+.full-width{
+    width: 100%
+}

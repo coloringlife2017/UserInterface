@@ -2,18 +2,18 @@
   <h1>{{c}}</h1>
 </div>-->
 
-<h3 class="text-center" style="color: white">Campaign List</h3>
+<h3 class="text-center pt-2" style="color: white">Campaign List</h3>
 <div>
   <div class="row ">
   <div class="col-sm-6 row-eq-height p-3 col-lg-6" *ngFor="let c of causes;let i = index">
-    <div class="card">
+    <div class="card full-height">
       <div id="carouselExampleControls{{i}}" data-interval="false" class="carousel slide card">
         <div class="carousel-inner" role="listbox">
           <div *ngFor="let img of c.images; let ii=index" [ngClass]="{'active': ii==0 }" class="carousel-item">
             <div class="carousel-caption d-md-block">
               <h1>{{c.name}}</h1>
             </div>
-            <img class="d-block img-fluid" src="{{img}}">
+            <img class="d-block img-fluid" src="{{img+c.name}}">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls{{i}}" role="button" data-slide="prev">
@@ -26,8 +26,8 @@
         </a>
       </div>
       <div class="card-block">
-        <p class="card-text">{{c.description}}</p>
-        <a href="#" [routerLink]="['/campDetail',c.campaignId]" class="btn btn-primary">More Information</a>
+        <p class="card-text">{{c.shortDescription}}</p>
+        <a href="#" [routerLink]="['/campDetail',c.$key]" class="btn btn-primary">More Information</a>
       </div>
     </div>
   </div>

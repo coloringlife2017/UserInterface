@@ -1,5 +1,4 @@
-import { campaignData } from './campaignsData';
-import { HttpModule, Http } from '@angular/http';
+import { CampaignDetailsService } from './../campaign-details/campaign-details.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,13 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class CampaignsComponent implements OnInit {
 
   public causes: any[];
-  constructor(private http: Http) { }
+  constructor(private campaignDetailsService: CampaignDetailsService) { }
 
   ngOnInit() {
-    let rawData: any[] = JSON.parse(campaignData);
-    this.causes = rawData.sort(
-      (campaign1: any, campaign2: any) => campaign1.displayOrder - campaign2.displayOrder
-    );
+    this.campaignDetailsService.getCampigns()
+      .subscribe(
+      (result) => this.causes = result,
+      (err) => console.log(err)
+      );
   }
 
 }

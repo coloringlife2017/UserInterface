@@ -9,7 +9,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class CampaignDetailsComponent implements OnInit {
 
-  private campId: string;
+  private campaignKey: string;
   private campaignDetails: any;
   public unitDonated: number = 1;
   constructor(private activatedRoute: ActivatedRoute,
@@ -18,10 +18,10 @@ export class CampaignDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.campId = this.activatedRoute.snapshot.params['campId'];
-    this.campaignService.getCampigns()
+    this.campaignKey = this.activatedRoute.snapshot.params['campId'];
+    this.campaignService.getCampaignById(this.campaignKey)
       .subscribe(
-      (result) => this.campaignDetails = result[this.campId],
+      (result) => this.campaignDetails = result[0],
       (err) => console.log(err)
       );//.unsubscribe();
     //this.campaignDetails = (<any[]>JSON.parse(campaignDetailData))[0];
