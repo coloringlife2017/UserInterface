@@ -1,3 +1,4 @@
+import { UserEventService } from './user-event.service';
 import { UserEvent, Audit, DateTime, HostInfo, Location, GuestList } from './dto/UserEvent';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,19 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserEventComponent implements OnInit {
 
-  constructor(private userEvent:UserEvent) {
-    userEvent.audit = new Audit();
-    userEvent.dateTime = new DateTime();
-    userEvent.hostInfo = new HostInfo();
-    userEvent.location = new Location();
-    userEvent.guestList = [new GuestList()];
+  private userEvent:UserEvent;
+  constructor(private userEventService:UserEventService) {
+    this.initUserEvent();
+  }
+
+  private initUserEvent(){
+    this.userEvent = null;
+    this.userEvent = new UserEvent();
+    this.userEvent.audit = new Audit();
+    this.userEvent.dateTime = new DateTime();
+    this.userEvent.hostInfo = new HostInfo();
+    this.userEvent.location = new Location();
+    this.userEvent.guestList = [new GuestList()];
   }
 
   ngOnInit() {
   }
 
-  checkData(){
-
+  saveEvent(){
+    this.userEventService.saveUserEvent(this.userEvent);
+    this.initUserEvent();
   }
 
   addGuest(){

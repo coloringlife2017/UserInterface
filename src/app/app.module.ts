@@ -1,3 +1,6 @@
+import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
+import { UserAuthService } from './commons/services/user-auth.service';
+import { UserEventService } from './user-event/user-event.service';
 import { UserEvent } from './user-event/dto/UserEvent';
 import { CampaignDetailsService } from './campaign-details/campaign-details.service';
 import { CampaignsComponent } from './campaigns/campaigns.component';
@@ -37,9 +40,10 @@ const firebaseConfig = {
     HttpModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [CampaignDetailsService, UserEvent],
+  providers: [CampaignDetailsService, UserEvent, UserEventService, UserAuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

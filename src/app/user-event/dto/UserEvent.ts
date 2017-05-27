@@ -78,6 +78,7 @@
         privacy: Privacy;
         campaignImages: string;
         eventImages: string;
+        $key:string;
     }
 
 

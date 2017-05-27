@@ -1,10 +1,21 @@
+import { UserAuthService } from './commons/services/user-auth.service';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `<router-outlet></router-outlet>`,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  constructor(public userAuthService: UserAuthService) {
+  }
+
+  login() {
+    this.userAuthService.login();
+  }
+
+  logout(){
+    this.userAuthService.logout();
+  }
+
 }
