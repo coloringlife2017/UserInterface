@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 #cloud functions
-/functions
+/functions/node_modules
