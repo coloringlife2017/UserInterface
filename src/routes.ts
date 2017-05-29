@@ -1,3 +1,4 @@
+import { ViewInvitationComponent } from './app/view-invitation/view-invitation.component';
 import { LoginComponent } from './app/login/login.component';
 import { UserAuthService } from './app/commons/services/user-auth.service';
 import { UserEventComponent } from './app/user-event/user-event.component';
@@ -10,5 +11,6 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'campaigns', component: CampaignsComponent },
     { path: 'campDetail/:campId', component: CampaignDetailsComponent },
-    { path: 'userEvent/new', component: UserEventComponent/*, canActivate:[UserAuthService] */}
+    { path: 'userEvent/new', component: UserEventComponent/*, canActivate:[UserAuthService] */ },
+    { path: 'userEvent/:eventId', component: ViewInvitationComponent /*, canActivate:[UserAuthService] */ }
 ];

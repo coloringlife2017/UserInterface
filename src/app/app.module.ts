@@ -1,3 +1,4 @@
+import { ViewInvitationService } from './view-invitation/view-invitation.service';
 import { AngularFireAuth, AngularFireAuthModule } from 'angularfire2/auth';
 import { UserAuthService } from './commons/services/user-auth.service';
 import { UserEventService } from './user-event/user-event.service';
@@ -18,6 +19,7 @@ import { AngularFireModule } from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { UserEventComponent } from './user-event/user-event.component';
 import { LoginComponent } from './login/login.component';
+import { ViewInvitationComponent } from './view-invitation/view-invitation.component';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCJx7rvrkYitHD838_0-DtKoxin30_H2q4",
@@ -34,7 +36,8 @@ const firebaseConfig = {
     CampaignsComponent,
     CampaignDetailsComponent,
     UserEventComponent,
-    LoginComponent
+    LoginComponent,
+    ViewInvitationComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,9 @@ const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [CampaignDetailsService, UserEvent, UserEventService, UserAuthService],
+  providers: [CampaignDetailsService, UserEvent, 
+  ViewInvitationService,
+  UserEventService, UserAuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

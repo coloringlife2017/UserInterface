@@ -66,8 +66,7 @@ export class UserEventService {
         let guestListKey = this.db.database.ref(this.getGuestListPath("")).push().key;
         this.saveGuestList(guestList, guestListKey, entityPath + "/" + eventKey).then(call => {
              userEvent.guestList = guestListKey;
-            this.db.database.ref(this.getEntityPath()+"/"+eventKey).set(userEvent).then(
-                data => console.log(data.key));
+            this.db.database.ref(this.getEntityPath()+"/"+eventKey).set(userEvent);
         });
 
     }

@@ -1,0 +1,18 @@
+<div class="card py-2 col-lg-12 col-sm-12" style="background-color: white">
+  <img class="card-img-top" src="https://unsplash.it/200/300" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Happy Birthday {{userEvent?.name}}</h4>
+    <p class="card-text">{{userEvent?.invitationDescription}}</p>
+    <span> Time: {{userEvent?.dateTime?.startDateTime}} - {{userEvent?.dateTime?.endDataTime}}</span>
+    <br>
+    <span>Contact: {{userEvent?.hostInfo?.phones}}</span>
+    <br>
+    <span>Address: {{userEvent?.location?.fullAddress}}</span>
+  </div>
+  <div *ngIf="userEvent?.guestList">
+    <a (click)="getGuestList()" class="btn btn-primary">Show Guests</a>
+    <div *ngFor="let g of guests">
+      {{g.email}}
+    </div>
+  </div>
+</div>

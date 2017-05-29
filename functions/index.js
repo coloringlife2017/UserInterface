@@ -1,25 +1,28 @@
 var functions = require('firebase-functions');
 const admin = require('firebase-admin');
+const cors = require('cors')({ origin: true });
 //var helper = require('sendgrid').mail;
 admin.initializeApp(functions.config().firebase);
 
-exports.getEventById = functions.https.onRequest( (req, resp) => {
-    var eventId = req.query.eventId;
-    admin.database().ref('userEvents/'+eventId).once("value",
-    data => {
-        let event = data.exportVal();     
-        if(event && event.privacy.guestListVisibility === 'HOST_ONLY'){
-            event.guestList = null;
-            resp.send(event);
-        }
-        else {
-            resp.send(event);
-        }
-    },
-    err => console.log("err>>   "+err)
-    ).catch( ex =>
-        console.log("Ex>>   "+ex)
-    );  
+exports.getEventById = functions.https.onRequest((req, resp) => {
+    cors(req, resp, () => {
+        var eventId = req.query.eventId;
+        admin.database().ref('userEvents/' + eventId).once("value",
+            data => {
+                let event = data.exportVal();
+                if (event && event.privacy.guestListVisibility === 'HOST_ONLY') {
+                    event.guestList = null;
+                    resp.send(event);
+                }
+                else {
+                    resp.send(event);
+                }
+            },
+            err => console.log("err>>   " + err)
+        ).catch(ex =>
+            console.log("Ex>>   " + ex)
+            );
+    });
 });
 
 // function sendEmail(to, from, content1) {
