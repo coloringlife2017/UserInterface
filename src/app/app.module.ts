@@ -17,6 +17,7 @@ import { CampaignDetailsComponent } from './campaign-details/campaign-details.co
 import { AngularFireModule } from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { UserEventComponent } from './user-event/user-event.component';
+import { LoginComponent } from './login/login.component';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCJx7rvrkYitHD838_0-DtKoxin30_H2q4",
@@ -32,7 +33,8 @@ const firebaseConfig = {
     AppComponent,
     CampaignsComponent,
     CampaignDetailsComponent,
-    UserEventComponent
+    UserEventComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

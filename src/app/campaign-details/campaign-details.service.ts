@@ -18,11 +18,6 @@ export class CampaignDetailsService {
     }
 
     public getCampaignById(campaignKey:string) {
-        return this.db.list(this.entityName, {
-            query: {
-                orderByKey: true,
-                equalTo: campaignKey
-            }
-        });
+        return this.db.object(this.entityName+"/"+campaignKey);
     }
 }

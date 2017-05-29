@@ -1,8 +1,7 @@
 <div>
-  <div class="py-2">
-      <a  (click)="login()" class="btn btn-primary">Login</a>
-      <span style="color: white" class="col-12">{{userAuthService?.currentUser?.displayName}}</span>
+  <div style="color: white" class="py-2">
+      <span  class="col-12">{{userAuthService?.currentUser?.displayName}}</span>
       <a *ngIf="userAuthService?.currentUser" (click)="logout()" class="btn btn-primary">logout</a>
-    </div>
+  </div>
   <router-outlet></router-outlet>
 </div>

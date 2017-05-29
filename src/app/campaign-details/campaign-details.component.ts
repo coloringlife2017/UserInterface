@@ -21,7 +21,7 @@ export class CampaignDetailsComponent implements OnInit {
     this.campaignKey = this.activatedRoute.snapshot.params['campId'];
     this.campaignService.getCampaignById(this.campaignKey)
       .subscribe(
-      (result) => this.campaignDetails = result[0],
+      (result) => this.campaignDetails = result,
       (err) => console.log(err)
       );//.unsubscribe();
     //this.campaignDetails = (<any[]>JSON.parse(campaignDetailData))[0];

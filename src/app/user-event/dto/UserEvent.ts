@@ -7,7 +7,6 @@
 
         constructor(){
             this.createTime = new Date().toISOString();
-            this.createdBy = "admin";
         }
     }
 
@@ -54,6 +53,7 @@
         reminderSent: ReminderSent;
         rsvp: Rsvp;
         donation: Donation;
+        eventUrl: string;
     }
 
     export class HostInfo {
@@ -65,6 +65,9 @@
     export class Privacy {
         guestListVisibility: string;
         allowGuestsToUploadPicutres: string;
+         constructor(){
+            this.guestListVisibility = "PUBLIC";
+        }
     }
 
     export class UserEvent {
@@ -72,7 +75,7 @@
         name: string;
         dateTime: DateTime;
         location: Location;
-        guestList: GuestList[];
+        guestList: string;
         invitationDescription: string;
         hostInfo: HostInfo;
         privacy: Privacy;
