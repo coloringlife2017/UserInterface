@@ -49,10 +49,11 @@ export class UserEventService {
         let promises: Array<Promise<string>> = [];
         guestList.forEach(guest => {
             if (guest) {
-                guest.eventUrl = "http://localhost:4200/userEvent/eventKey=" + eventUrl;
+                let guestKey:string = this.db.database.ref(this.getGuestListPath(guestListKey)).push(guest).key;
+                guest.eventUrl = "http://localhost:4200/userEvent/" + eventUrl + "$" + guestListKey + "$" + guestKey;
                 let p: Promise<string> = new Promise(resolve => {
-                    this.db.database.ref(this.getGuestListPath(guestListKey)).push(guest).then(
-                        data => resolve(data.key));
+                    this.db.database.ref(this.getGuestListPath(guestListKey+"/"+guestKey)).set(guest).then(
+                        resolve);
                 });
                 promises.push(p);
             }
@@ -64,7 +65,7 @@ export class UserEventService {
         let entityPath: string = this.getEntityPath();
         let eventKey = this.db.database.ref(entityPath).push().key;
         let guestListKey = this.db.database.ref(this.getGuestListPath("")).push().key;
-        this.saveGuestList(guestList, guestListKey, entityPath + "/" + eventKey).then(call => {
+        this.saveGuestList(guestList, guestListKey, entityPath + "$" + eventKey).then(call => {
              userEvent.guestList = guestListKey;
             this.db.database.ref(this.getEntityPath()+"/"+eventKey).set(userEvent);
         });

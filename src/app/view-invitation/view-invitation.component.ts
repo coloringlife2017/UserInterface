@@ -26,6 +26,10 @@ export class ViewInvitationComponent implements OnInit {
     }
   }
 
+  public rsvp(response:string){
+    this.service.updateRsvp(response);
+  }
+
   public getGuestList() {
     let hostRootKey: string = this.eventKey.split("$")[0];
     this.service

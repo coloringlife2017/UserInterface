@@ -8,7 +8,13 @@
     <span>Contact: {{userEvent?.hostInfo?.phones}}</span>
     <br>
     <span>Address: {{userEvent?.location?.fullAddress}}</span>
+    <div class="row py-2">
+    <a (click)="rsvp('YES')" class="mx-1 btn btn-primary">YES</a>
+    <a (click)="rsvp('NO')" class="mx-1 btn btn-secondary">NO</a>
+    <a (click)="rsvp('MAYBE')" class="mx-1 btn btn-secondary">MAYBE</a>
   </div>
+  </div>
+  
   <div *ngIf="userEvent?.guestList">
     <a (click)="getGuestList()" class="btn btn-primary">Show Guests</a>
     <div *ngFor="let g of guests">

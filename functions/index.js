@@ -1,8 +1,32 @@
 var functions = require('firebase-functions');
 const admin = require('firebase-admin');
-const cors = require('cors')({ origin: true });
+const cors = require('cors')({preflightContinue: false, origin: "*", methods:['GET','POST']});
 //var helper = require('sendgrid').mail;
 admin.initializeApp(functions.config().firebase);
+
+exports.updateRsvp = functions.https.onRequest((req, resp) => {
+    resp.set('Access-Control-Allow-Origin', "*");
+    // cors((req, resp) => {
+    let eventPath = req.body["eventPath"];
+    let guestKey = req.body["guestKey"];
+    let rsvpData = req.body["data"];
+console.log("eventPath:  "+eventPath);
+    admin.database().ref('userEvents/' + eventPath).once("value",
+        eventDataRaw => {
+            
+            let eventData = eventDataRaw.exportVal();
+            let userKey = eventPath.split("/")[0];
+            let guestListPath = "guestList/" + userKey + "/" + eventData.guestList + "/" + guestKey;
+            console.log("guestListPath: " + guestListPath);
+            admin.database().ref(guestListPath).update(rsvpData).then(
+                r => {
+                    
+                    resp.status(200).send("OK");
+                });
+        });
+    // });
+
+});
 
 exports.getEventById = functions.https.onRequest((req, resp) => {
     cors(req, resp, () => {
