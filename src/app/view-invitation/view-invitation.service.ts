@@ -19,11 +19,11 @@ export class ViewInvitationService {
     let eventPath:string = this.eventParams[0]+"/"+this.eventParams[1];
     let guestKey = this.eventParams[2];
     this.http.post(this.RSVP_URL, {
-      params:{
+      
         guestKey: guestKey,
         data: rsvp,
         eventPath: eventPath
-      }
+      
     }).subscribe(console.log);
   }
 
