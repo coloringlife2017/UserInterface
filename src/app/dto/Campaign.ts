@@ -9,7 +9,6 @@
             this.createTime = new Date().toISOString();
         }
     }
-//cheange
 
     export class DateTime {
         endDataTime: string;
@@ -45,6 +44,7 @@
     export class Donation {
         notificationType: string;
         amount: number;
+        
     }
 
     export class GuestList {
@@ -84,5 +84,32 @@
         eventImages: string;
         $key:string;
     }
+
+    export class ImpactUnit {
+        Label: String;
+        DonationOptions:number[];
+        MinimumUnits: number;
+        MaximumUnits: number;
+        DefaultSelection: number;
+        UnitCost: number;
+    }
+
+    export class Campaign {
+       name: string;
+       URL:string;
+       Title:string;
+       Description:string;
+       OrganizationID:string;
+       DisplayRank:number;
+       StartDate:DateTime;
+       EndDate:DateTime;
+       location:Location;
+       MinimumAmount:PaymentCurrencyAmount;
+       MaximumAmount:PaymentCurrencyAmount;
+       AmountRaised:PaymentCurrencyAmount;
+       Status:string;
+       ImpactUnit: ImpactUnit[];
+    }
+    
 
 
