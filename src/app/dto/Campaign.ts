@@ -2,9 +2,9 @@
     export class Audit {
         createTime: string;
         createdBy: string;
-        updateTime: string;
-        updatedBy: string;
-
+        lastUpdateTime: string;
+        lastUpdatedBy: string;
+        updateCount:number;
         constructor(){
             this.createTime = new Date().toISOString();
         }
@@ -23,69 +23,7 @@
         country: string;
     }
 
-    export class InvitationSent {
-        sent: string;
-        delivered: string;
-    }
-
-    export class ReminderSent {
-        sent: string;
-        delivered: string;
-    }
-
-    export class Rsvp {
-        rsvpStatus: string;
-        rsvpDateTime: string;
-        comments: string;
-        device: string;
-        location: string;
-    }
-
-    export class Donation {
-        notificationType: string;
-        amount: number;
-        
-    }
-
-    export class GuestList {
-        fullName: string;
-        email: string;
-        invitationSent: InvitationSent;
-        reminderSent: ReminderSent;
-        rsvp: Rsvp;
-        donation: Donation;
-        eventUrl: string;
-    }
-
-    export class HostInfo {
-        name: string;
-        phones: string[];
-        emails: string[];
-    }
-
-    export class Privacy {
-        guestListVisibility: string;
-        allowGuestsToUploadPicutres: string;
-         constructor(){
-            this.guestListVisibility = "PUBLIC";
-        }
-    }
-
-    export class UserEvent {
-        audit: Audit;
-        name: string;
-        dateTime: DateTime;
-        location: Location;
-        guestList: string;
-        invitationDescription: string;
-        hostInfo: HostInfo;
-        privacy: Privacy;
-        campaignImages: string;
-        eventImages: string;
-        $key:string;
-    }
-
-    export class ImpactUnit {
+      export class ImpactUnit {
         Label: String;
         DonationOptions:number[];
         MinimumUnits: number;
@@ -94,21 +32,26 @@
         UnitCost: number;
     }
 
+ export class CurrencyAmount {
+     format: string;
+     currency: string;
+     amount: number;
+ }
+
     export class Campaign {
        name: string;
-       URL:string;
-       Title:string;
-       Description:string;
-       OrganizationID:string;
-       DisplayRank:number;
-       StartDate:DateTime;
-       EndDate:DateTime;
+       url:string;
+       title:string;
+       description:string;
+       organizationID:string;
+       displayRank:number;
+       dateRange:DateTime;
        location:Location;
-       MinimumAmount:PaymentCurrencyAmount;
-       MaximumAmount:PaymentCurrencyAmount;
-       AmountRaised:PaymentCurrencyAmount;
-       Status:string;
-       ImpactUnit: ImpactUnit[];
+       minimumAmount:CurrencyAmount;
+       maximumAmount:CurrencyAmount;
+       amountRaised:CurrencyAmount;
+       status:string;
+       impactUnit: ImpactUnit[];
     }
     
 
