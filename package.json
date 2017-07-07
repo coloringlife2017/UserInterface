@@ -23,11 +23,11 @@
     "angularfire2": "^4.0.0-rc.0",
     "core-js": "^2.4.1",
     "firebase": "^4.0.0",
-    "rxjs": "^5.1.0",
+    "rxjs": "^5.4.2",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.2",
+    "@angular/cli": "1.2.0",
     "@angular/compiler-cli": "^4.0.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "~6.0.60",
@@ -43,7 +43,8 @@
     "protractor": "~5.1.0",
     "ts-node": "~2.0.0",
     "tslint": "~4.5.0",
-    "typescript": "^2.2.2",
-    "typings": "^2.1.1"
+    "typescript": "^2.4.1",
+    "typings": "^2.1.1",
+    "webpack": "^3.1.0"
   }
 }
