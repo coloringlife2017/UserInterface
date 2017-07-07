@@ -5,9 +5,10 @@ import { UserEventComponent } from './app/user-event/user-event.component';
 import { CampaignDetailsComponent } from './app/campaign-details/campaign-details.component';
 import { CampaignsComponent } from './app/campaigns/campaigns.component';
 import { Routes } from '@angular/router';
+import { CampDetailComponent } from "app/new-ui/camp-detail/camp-detail.component";
 
 export const routes: Routes = [
-    { path: '', component: CampaignsComponent },
+    { path: '', component: CampDetailComponent },
     { path: 'login', component: LoginComponent },
     { path: 'campaigns', component: CampaignsComponent },
     { path: 'campDetail/:campId', component: CampaignDetailsComponent },
