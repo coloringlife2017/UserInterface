@@ -1,5 +1,7 @@
+import { dateRange, CurrencyAmount } from './Common';
 
-      export class ImpactUnit {
+
+    export class ImpactUnit {
         Label: String;
         DonationOptions:number[];
         MinimumUnits: number;
@@ -15,7 +17,7 @@
        description:string;              //Free Form detail description field for the campaign.
        organizationID:string;           //Link to the Non-profit table.
        displayRank:number;              //Display Rank for the campaigns, to be used to sort pages to display on the home page and other Campaign listings
-       dateRange:DateTime;              //Object with a StartDate and EndDate for the campaign
+       dateRange:dateRange;              //Object with a StartDate and EndDate for the campaign
        location:Location;               //Location Object with the address of the Campaign, to be entered by the Non-Profit.
        minimumAmount:CurrencyAmount;    //Minimum amount the Non-profit would like to raise (per event?)
        maximumAmount:CurrencyAmount;    //Maximum amount the Non-profit can raise.
