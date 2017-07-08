@@ -1,5 +1,5 @@
-<div>
-  <div style="color: white" class="py-2">
+<div class="col-12">
+  <div class="col-12" style="color: white" class="py-2">
       <span  class="col-12">{{userAuthService?.currentUser?.displayName}}</span>
       <a *ngIf="userAuthService?.currentUser" (click)="logout()" class="btn btn-primary">logout</a>
   </div>

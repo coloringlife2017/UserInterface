@@ -20,6 +20,9 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { UserEventComponent } from './user-event/user-event.component';
 import { LoginComponent } from './login/login.component';
 import { ViewInvitationComponent } from './view-invitation/view-invitation.component';
+import { PaymentsComponent } from './payments/payments.component';
+import { ConnectCompComponent } from './connect-comp/connect-comp.component';
+import { SeedinvestToclComponent } from './seedinvest-tocl/seedinvest-tocl.component';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCJx7rvrkYitHD838_0-DtKoxin30_H2q4",
@@ -37,7 +40,10 @@ const firebaseConfig = {
     CampaignDetailsComponent,
     UserEventComponent,
     LoginComponent,
-    ViewInvitationComponent
+    ViewInvitationComponent,
+    PaymentsComponent,
+    ConnectCompComponent,
+    SeedinvestToclComponent
   ],
   imports: [
     BrowserModule,
