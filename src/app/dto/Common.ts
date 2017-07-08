@@ -12,7 +12,7 @@
         }
     }
 
-    export class dateRange {     // basic DateRange Object, if endDate is empty it means there is no Range.
+    export class DateRange {     // basic DateRange Object, if endDate is empty it means there is no Range.
         endDataTime: string;
         startDateTime: string;
     }
@@ -25,8 +25,13 @@
         country: string;
     }
 
- export class CurrencyAmount {
-     format: string;
-     currency: string;
-     amount: number;
- }
+    export class CurrencyAmount {
+        format: string;
+        currency: string;
+        amount: number;
+    }
+
+    export class CurrencyType {
+        format: string;
+        currency: string;
+    }

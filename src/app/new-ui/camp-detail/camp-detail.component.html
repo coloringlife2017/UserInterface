@@ -114,29 +114,30 @@
               <span>{{campaignDetail.title}} </span>
             </h1>
             <p class="page-subtitle">
-              {{campaignDetail.shortDesc}}
-
-              <br> - Sandy Springs, GA
-              <br> - 10 July 2017 to 10 August 2017
+              {{campaignDetail.shortDescription}}
+              <br> 
+              <br> By helping {{campaignDetail.organizationName}}
+              <br> When: {{campaignDetail.dateRange}}
+              <br> Where: {{campaignDetail.location.city}}, {{campaignDetail.location.state}}
             </p>
 
             <div ui-view="above_the_fold" class="animated fadeIn ng-scope">
               <ul class="page-highlights no-bullet-list inline-list tight-list ng-scope" ng-if="profile.investability.action == 'invest' || profile.investability.action == 'show_oversubscribed_warning' || profile.investability.action == 'quiz_and_invest' || !profile.investability.action || profile.investability.reason == 'anonymous' || profile.offering_type.is_regcf || profile.investability.action == 'show_investment_summary' || profile.investability.action == 'invest_interest' || profile.investability.action == 'reserve' || profile.investability.action == 'show_reservation_summary' || profile.investability.action == 'submit_reservation' || profile.investability.action == 'confirm_investment'">
 
                 <li ng-if="profile.share_price &amp;&amp; profile.offering_type.is_rega_plus" class="ng-binding ng-scope">
-                  $10.00 <br>
-                  <span class="label">per unit</span>
+                  {{campaignDetail.currencyType.currency}}{{campaignDetail.impactUnits[0].unitCost}} <br>
+                  <span class="label">per {{campaignDetail.impactUnits[0].unitLabel}}</span>
                 </li>
                 <li ng-if="profile.funding_round.security_type &amp;&amp; (profile.funding_round.security_type == 'Common Equity' || profile.funding_round.security_type == 'Preferred Equity') &amp;&amp; profile.funding_round.pre_money_valuation &amp;&amp; !(check_int(profile.funding_round.investment_count) > 500)"
                   class="ng-scope">
-                  <span ng-if="check_int(profile.funding_round.pre_money_valuation)" class="ng-binding ng-scope">$2999 <br>
+                  <span ng-if="check_int(profile.funding_round.pre_money_valuation)" class="ng-binding ng-scope">{{campaignDetail.currencyType.currency}}{{campaignDetail.maximumAmount}} <br>
 <span class="tooltip-link label" tooltip-placement="bottom-left" tooltip-html-unsafe="The valuation of the issuer prior to investments resulting from this offering.">Target amount</span>
                   </span>
                 </li>
 
                 <li ng-if="profile.funding_round.security_type &amp;&amp; !check_int(profile.funding_round.investment_total)" class="ng-scope">
 
-                  <span ng-if="profile.funding_round.security_type == 'Preferred Equity'" class="ng-binding ng-scope">$99<br>
+                  <span ng-if="profile.funding_round.security_type == 'Preferred Equity'" class="ng-binding ng-scope">{{campaignDetail.currencyType.currency}}{{campaignDetail.amountRaised}}<br>
 <span class="label tooltip-link" tooltip-placement="bottom-left" tooltip-html-unsafe="Equity issued to outside investors and carries rights and conditions that are different from that of common stock. For example, preferred equity may include rights that prevent or minimize the effects of dilution or grants special privileges in situations when the company is sold.">Collected so far</span>
                   </span>
                 </li>
@@ -184,7 +185,7 @@
                   <div class="section-content collapse-margin">
                     <footer class="site-section-footer collapse-margin">
                       <p class="grey-copy">
-                        Campaign / NGO description goes here...
+                        {{campaignDetail.description}}
                       </p>
                     </footer>
                   </div>
