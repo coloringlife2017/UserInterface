@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CampDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    this.campaignDetail = { 
+      title: 'Help a kid',
+      shortDesc: 'this is one liner for the campaign'
+    };
+  }
 
   ngOnInit() {
   }
+
+  public campaignDetail: any;
+
 
 }
