@@ -1,7 +1,7 @@
 
-    // Library with commonly used 
+    // Library with commonly used objects.
 
-    export class Audit {
+    export class Audit {           // Object to capture audits to a particular item.
         createTime: string;
         createdBy: string;
         updateTime: string;
@@ -12,7 +12,7 @@
         }
     }
 
-    export class DateTime {
+    export class dateRange {     // basic DateRange Object, if endDate is empty it means there is no Range.
         endDataTime: string;
         startDateTime: string;
     }
@@ -24,3 +24,9 @@
         state: string;
         country: string;
     }
+
+ export class CurrencyAmount {
+     format: string;
+     currency: string;
+     amount: number;
+ }
