@@ -1,104 +1,196 @@
 <div class="container">
-<section id="fundraising-companies-section " class="row large-up-show bg-white">
-  <div class="section-content">
-    <div class="row max-xl">
-      <div class="column xs-16">
-        <section class="collapse-margin-top">
-          <div class="section-content xs deal-tiles-wrapper collapse-margin-top">
-            <div id="deal-thumbnail-6721" *ngFor="let campaign of campaigns" class="thumbnail tile entity deal xl active">
-              <!-- deal label -->
-              <p class="thumbnail-label">Accepting Investments</p>
-              <!-- end deal label -->
-              <div class="thumbnail-content">
-                <!-- deal tile images -->
-                <a class="thumbnail-hero-image-wrapper" href="/ngo/ngoid">
-                                  <img class="thumbnail-hero-image" src="{{campaign.campaignImageUrl}}">
-                                                </a>
-                <a class="entity-image company small " href="/knightscope/series.m">
-                                                    <img src="{{campaign.ngoLogoUrl}}">
-                                                </a>
-                <!-- end deal tile images -->
-                <!-- deal tile header -->
-                <header>
-                  <h5 class="thumbnail-title">
-                    <a href="/knightscope/series.m">{{campaign.campaignTitle}}</a>
-                  </h5>
-                </header>
-                <!-- end deal tile header -->
-                <div class="thumbnail-caption" style="height: 50px;">
-                  <p class="tagline">{{campaign.campaignDescription}}</p>
-                </div>
-              </div>
-            </div>
+  <header class="site-section-header-wrapper page-header ng-scope" ng-controller="landingTypingAnimationController">
+    <div class="header-image-wrapper ng-scope" ng-controller="landingStickyNavController">
+      <img class="init-header-image animated header-image fadeOut" src="http://coloringlife.in/images/Slider-img1.jpg">
+      <img class="animated-header-image animated header-image fadeIn" ng-src="http://coloringlife.in/images/Slider-img1.jpg" src="http://coloringlife.in/images/Slider-img1.jpg">
+    </div>
+    <div class="site-section-header page-header-hgroup text-center bottom">
+      <div class="row max-xl">
+        <div class="column xs-16">
+          <h1 class="page-title large-up-show">Start celebrating and color lives
+            <!--<small>
+								<sup class="clickable disclosure ng-binding ng-isolate-scope" ng-click="$root.openRightNotes=!$root.openRightNotes" si-disclosure="" si-disclosure-key="vetting">1</sup>
+							</small>-->
+          </h1>
+          <h2 class="page-subtitle">Start donating and know your impact</h2>
+          <div class="btn-bar">
+            <a class="large btn blue filled ghost ng-scope" ng-if="!user.is_anonymous" href="/offerings">Start Celebrating &nbsp; 
+                                                                        
+								<svg class="icon medium-copy icon-arrow-right =" viewBox="0 0 20 20">
+									<use
+										xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right">
+									</use>
+								</svg>
+							</a>
+
           </div>
-          <div class="section-content text-center">
-            <a class="btn small black ghost normal-copy" href="/offerings">View All Campaigns &nbsp;
-                                            <svg class="icon icon-arrow-right" viewBox="0 0 20 20">
-                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use>
-                                            </svg>
-                                        </a>
-          </div>
-        </section>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-<!--
-<section class="row text-center">
-  <div class="section-content container col-10 bg-white">
-    <div class="row max-xl">
-      <div class="column xs-16">
-        <section>
-          <header class="subsection-header clean">
-            <h3 class="subsection-title">Invest alongside top venture capital firms and angel investors.</h3>
-            <br>
-          </header>
-        </section>
-        <section>
-          <div class="section-content logos-wrapper">
-            <div class="row large-gutter">
-              <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]" 
-              class="column xs-twelve-4 small-4 medium-3 large-2">
-                <div class="img-wrapper square wide">
-                  <div class="entity-image press large">
-                    <img src="https://lorempixel.com/220/110?{{i}}">
+  </header>
+  <section>
+    <div class="section-content expand text-center">
+      <div class="row large-gutter">
+        <br>
+        <div class="column xs-16 large-twelve-4">
+          <div class="snippet">
+            <section>
+              <div class="image-wrapper">
+                <img src="https://d2v4u62fw1nf2w.cloudfront.net/app/img/images/landing/verified.svg">
+              </div>
+            </section>
+            <header class="snippet-header clean">
+              <h3 class="snippet-title sbold-copy">Verified Organizations
+                <small>
+										<sup class="clickable disclosure ng-binding ng-isolate-scope" 
+                    ng-click="openRightNotes=!openRightNotes" si-disclosure="" si-disclosure-key="vetting">1</sup>
+									</small>
+              </h3>
+            </header>
+            <div class="snippet-content">
+              <p>Organizations are personally verified by us to make sure your money reaches to the people in need.
+                <small>
+										<sup class="clickable disclosure ng-binding ng-isolate-scope" 
+                    ng-click="openRightNotes=!openRightNotes" si-disclosure="" si-disclosure-key="onePercent">2</sup>
+									</small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="column xs-16 large-twelve-4">
+          <div class="snippet">
+            <section>
+              <div class="image-wrapper">
+                <img src="https://d2v4u62fw1nf2w.cloudfront.net/app/img/images/landing/diversify-2.svg">
+              </div>
+            </section>
+            <header class="snippet-header clean">
+              <h3 class="snippet-title sbold-copy">See Impact
+                <small>
+											<sup class="clickable disclosure ng-binding ng-isolate-scope" 
+                      ng-click="openRightNotes=!openRightNotes" si-disclosure="" si-disclosure-key="diversification">3</sup>
+										</small>
+              </h3>
+            </header>
+            <div class="snippet-content">
+              <p>We make sure you see the impact of your donation</p>
+            </div>
+          </div>
+        </div>
+        <div class="column xs-16 large-twelve-4">
+          <div class="snippet">
+            <section>
+              <div class="image-wrapper">
+                <img src="https://d2v4u62fw1nf2w.cloudfront.net/app/img/images/landing/future.svg">
+              </div>
+            </section>
+            <header class="snippet-header clean">
+              <h3 class="snippet-title sbold-copy">Feel Good</h3>
+            </header>
+            <div class="snippet-content">
+              <p>You feel good when you see the impact</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="fundraising-companies-section " class="row large-up-show bg-white">
+    <div class="section-content">
+      <div class="row max-xl">
+        <div class="column xs-16">
+          <section class="collapse-margin-top">
+            <div class="section-content xs deal-tiles-wrapper collapse-margin-top">
+              <div id="deal-thumbnail-6721" *ngFor="let campaign of campaigns" class="thumbnail tile entity deal xl active">
+                <!-- deal label -->
+                <p class="thumbnail-label">Accepting Donations</p>
+                <!-- end deal label -->
+                <div class="thumbnail-content">
+                  <!-- deal tile images -->
+                  <a class="thumbnail-hero-image-wrapper" href="/ngo/ngoid">
+                                  <img class="thumbnail-hero-image" src="{{campaign.imageUrl}}">
+                                                </a>
+                  <a class="entity-image company small " href="/knightscope/series.m">
+                                                    <img src="{{campaign.ngoLogoUrl}}">
+                                                </a>
+                  <!-- end deal tile images -->
+                  <!-- deal tile header -->
+                  <header>
+                    <h5 class="thumbnail-title">
+                      <a href="/knightscope/series.m">{{campaign.title}}</a>
+                    </h5>
+                  </header>
+                  <!-- end deal tile header -->
+                  <div class="thumbnail-caption" style="height: 50px;">
+                    <p class="tagline">{{campaign.shortDescription}}</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
+            <div class="section-content text-center">
+              <a class="btn small black ghost normal-copy" href="/offerings">View All Campaigns &nbsp;
+                                            <svg class="icon icon-arrow-right" viewBox="0 0 20 20">
+                                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use>
+                                            </svg>
+                                        </a>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="fundraising-section" class="row transparent light-negative-copy padded">
-  <div class="section-background">
-    <img class="section-background-image" 
-    src="https://d2v4u62fw1nf2w.cloudfront.net/app/img/images/landing/space.jpg">
-  </div>
-  <div class="section-content col-12">
-    <div class="row max-xl">
-      <div class="column xs-16 large-14 large-centered text-center">
-        <section>
-          <header class="section-header collapse-margin">
-            <h2 class="section-title normal-copy small 
-                        light-negative-copy"> Connect with us to raise funds
-              <span class="xl-up-show-inline">With SeedInvest</span>
-            </h2>
-          </header>
-          <div class="section-content large collapse-margin">
-            <p class="collapse-margin-top">
-              ColoringLife can help you spend less time fundraising and more time helping others.
-            </p>
-          </div>
-          <br>
-          <a class="btn filled lime" href="/">Start your raise</a>
-        </section>
+  </section>
+  <!--<section class="row text-center">
+    <div class="section-content container col-10 bg-white">
+      <div class="row max-xl">
+        <div class="column xs-16">
+          <section>
+            <header class="subsection-header clean">
+              <h3 class="subsection-title">Invest alongside top venture capital firms and angel investors.</h3>
+              <br>
+            </header>
+          </section>
+          <section>
+            <div class="section-content logos-wrapper">
+              <div class="row large-gutter">
+                <div *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]" class="column xs-twelve-4 small-4 medium-3 large-2">
+                  <div class="img-wrapper square wide">
+                    <div class="entity-image press large">
+                      <img src="https://lorempixel.com/220/110?{{i}}">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     </div>
-  </div>
-</section>-->
+  </section>-->
+  <section id="fundraising-section" class="row transparent light-negative-copy padded">
+    <div class="section-background">
+      <img class="section-background-image" src="https://d2v4u62fw1nf2w.cloudfront.net/app/img/images/landing/space.jpg">
+    </div>
+    <div class="section-content col-12">
+      <div class="row max-xl">
+        <div class="column xs-16 large-14 large-centered text-center">
+          <section>
+            <header class="section-header collapse-margin">
+              <h2 class="section-title normal-copy small 
+                        light-negative-copy"> Connect with us to help people
+                <span class="xl-up-show-inline">by coloring their life</span>
+              </h2>
+            </header>
+            <div class="section-content large collapse-margin">
+              <p class="collapse-margin-top">
+                ColoringLife can help you spend less time fundraising and more time helping others.
+              </p>
+            </div>
+            <br>
+            <a class="btn filled lime" href="/">Start your campaign</a>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </div>
