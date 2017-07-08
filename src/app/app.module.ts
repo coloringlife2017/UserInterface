@@ -23,6 +23,7 @@ import { ViewInvitationComponent } from './view-invitation/view-invitation.compo
 import { PaymentsComponent } from './payments/payments.component';
 import { ConnectCompComponent } from './connect-comp/connect-comp.component';
 import { SeedinvestToclComponent } from './seedinvest-tocl/seedinvest-tocl.component';
+import { ClDonationComponent } from './cl-donation/cl-donation.component';
 
 const firebaseConfig = {
     apiKey: "AIzaSyCJx7rvrkYitHD838_0-DtKoxin30_H2q4",
@@ -43,7 +44,8 @@ const firebaseConfig = {
     ViewInvitationComponent,
     PaymentsComponent,
     ConnectCompComponent,
-    SeedinvestToclComponent
+    SeedinvestToclComponent,
+    ClDonationComponent
   ],
   imports: [
     BrowserModule,

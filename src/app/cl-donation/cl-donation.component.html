@@ -1,0 +1,420 @@
+<div class="container">
+
+
+  <!-- uiView:  -->
+  <div class="site-content ng-scope" ui-view="">
+    <div class="site-section-content ng-scope">
+      <div class="site-subsection-content">
+        <div class="page-content-wrapper">
+          <div class="page-content">
+            <div class="side-nav-hidden-scrollbar-wrapper right-side large-up-show noprint personal medium expanded">
+              <div id="right-notes" class="side-notes">
+                <div class="side-nav-header side-nav-header-hgroup">
+                  <div class="row">
+                    <div class="column xs-16">
+                      <section class="collapse-margin-bottom">
+                        <header class="section-header collapse-margin-bottom medium-up-show">
+                          <br class="large-up-show">
+                          <br class="large-up-show">
+                          <h3 class="section-title xs">&nbsp;</h3>
+                        </header>
+                      </section>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="column xs-14 xs-centered">
+                      <section>
+                        <div class="section-content">
+                          <div class="snippet collapse-margin-bottom">
+                            <div class="snippet-content">
+                              <img src="http://lorempixel.com/300/100/">
+
+                              <p class="xs-copy sbold-copy ng-binding">{{campaign.title}}</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="snippet panel listed tightly-listed">
+                          <div class="snippet-content small">
+                            <dl class="no-bullet-list tight-list">
+                              <li class="inline-term split-2-to-1">
+                                <dt>Your contribution:</dt>
+                                <dd class="text-right ng-binding">US $200.00</dd>
+                              </li>
+                            </dl>
+                          </div>
+                        </div>
+
+                        <div class="snippet panel listed tightly-listed">
+                          <div class="snippet-content small">
+                            <footer>
+                              <p>You will be charged a 2% non-refundable transaction fee (up to US $300) when investing. For
+                                additional information regarding any customer fees, please see our <a href="https://d2v4u62fw1nf2w.cloudfront.net/documents/SI%20Securities,%20LLC%20-%20Customer%20Agreement%20and%20Fee%20Schedule%203.22.17.pdf"
+                                  target="_blank" download="">customer agreement</a>.</p>
+                            </footer>
+                            <footer>
+                              <p class="ng-binding">The funds for your investment will be placed in escrow and released to HelloMD upon countersignature
+                                and a scheduled closing of the offering. In the exceptional case your investment is canceled
+                                or declined for any reason, you will be immediately notified and all funds related to your
+                                investment will be promptly returned.</p>
+                            </footer>
+                          </div>
+                        </div>
+                        <div class="snippet panel listed no-border-bottom tightly-listed">
+                          <div class="snippet-content small">
+                            <footer>
+                              <p class="xxs-copy">
+                                <a class="clean" onclick="Intercom('showNewMessage');">
+<span class="blue-copy">Having trouble completing your investment?</span>
+</a>
+                              </p>
+                            </footer>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row max-xl">
+              <div class="column xs-16 large-10 xxxl-centered">
+                <section class="collapse-margin-bottom">
+                  <header class="section-header collapse-margin-bottom medium-up-show">
+                    <br class="large-up-show">
+                    <br class="large-up-show">
+                    <h3 ng-if="!deal.is_oversubscribed" class="section-title xs ng-binding ng-scope">Start Contributing.</h3>
+
+                    <p class="grey-copy ng-binding ng-scope" 
+                    ng-if="(deal.funding_round.security_type == 'Preferred Equity' &amp;&amp; deal.share_price) || (deal.funding_round.security_type == 'Convertible Note' || deal.funding_round.security_type == 'Crowd Note')">
+                    {{campaign.title}} with your contribution
+                      <span ng-if="deal.funding_round.security_type == 'Preferred Equity' &amp;&amp; deal.share_price" class="ng-binding ng-scope">of 
+                        {{campaign.currencyType.currency}}{{campaign.impactUnits[0].unitCost}}
+                         per kid</span>
+
+                  </header>
+                </section>
+              </div>
+              <div class="column xs-16 large-10 xxxl-centered">
+                <section ui-view="" class="ng-scope">
+                  <div class="section-content ng-scope">
+                    <div class="snippet panel listed collapse-margin accordion-item step amount active" ng-class="{'active': $state.includes('short_investing.investing.amount'), 'clickable': flow_service.amount_complete}">
+                      <header class="snippet-header clearfix" ng-click="flow_service.amount_complete &amp;&amp; flow_service.go_to_amount()">
+                        <h3 class="snippet-title left">
+                          <span class="medium-up-hide">1.</span> Your Contribution</h3>
+                        <p class="counter right">
+                          <span ng-if="flow_service.investment.amount" class="ng-binding ng-scope">US $200.00</span>
+
+                        </p>
+                      </header>
+
+                      <div> <br> No. of Kids:<br>
+                        <span class="badge badge-text">10</span> <span class="badge badge-text">20</span> <span class="badge badge-text">30</span>                        <span class="badge badge-text">Other</span> <br> Amount: $200
+                      </div>
+
+                      <p class="field-help-text always-show darkest-si-grey-copy ng-binding ng-scope" ng-show="deal_needs_share_adjustment &amp;&amp; investment.amount &amp;&amp; adjusted_investment_amount &amp;&amp; investment_adjusted">Your investment will be automatically adjusted to US $500.85, a multiple of the share price of US $1.050,
+                        when you confirm your amount. The adjusted investment amount is equal to purchasing 477 shares.</p>
+                      <button ng-disabled="disabled" ng-class="{loading: submitting}" type="submit" ng-click="$parent.submit()" class="btn medium darker-si-grey filled expand medium-up-hide ng-binding ng-scope ng-isolate-scope"
+                        text="'Continue'" loading-text="'Saving Amount...'"> Continue </button>
+
+                      <br class="medium-up-show ng-scope">
+                      <button ng-disabled="disabled" ng-class="{loading: submitting}" type="submit" ng-click="$parent.submit()" class="btn right medium darker-si-grey filled medium-up-show ng-binding ng-scope ng-isolate-scope"
+                        text="'Continue'" loading-text="'Saving Amount...'"> Continue </button>
+
+
+                    </div>
+                  </div>
+
+
+                  <div class="snippet panel listed collapse-margin accordion-item step identity active" ng-class="{'active': $state.includes('short_investing.investing.identity')}">
+                    <header class="snippet-header clearfix" ng-click="flow_service.identity_complete &amp;&amp; flow_service.go_to_identity()"
+                      ng-class="{'clickable': flow_service.identity_complete}">
+                      <h3 class="snippet-title left">
+                        <span class="medium-up-hide">2.</span> Payment and billing details</h3>
+                      <p class="counter right">
+                        <!-- ngIf: !flow_service.identity_complete -->
+                        <span ng-if="!flow_service.identity_complete" class="ng-binding ng-scope">1 of 2</span>
+                        <!-- end ngIf: !flow_service.identity_complete -->
+                        <!-- ngIf: flow_service.identity_complete -->
+                      </p>
+                    </header>
+                    <!-- uiView: identity -->
+                    <div class="snippet-content collapse ng-scope" ng-class="{'collapsed': !$state.includes('short_investing.investing.identity')}"
+                      ui-view="identity">
+                      <form novalidate="" name="short_investing_identity_info_form" class="ng-scope ng-invalid ng-invalid-required ng-valid-international-phone-number ng-dirty ng-valid-parse">
+
+                        <div class="field-group ng-scope">
+                          <div class="xs-16 medium-8 boxed split-1-to-1 transparent field-wrapper field-error-catch collapse ng-isolate-scope empty unfocused"
+                            ng-class="{error: valid, empty: empty, collapsed: collapsed,
+required: required, focused: focused, unfocused: !focused, &quot;no-label-text&quot;: !labelText}" si-form-field="" for="user_identity__first_name"
+                            label-text="Legal First Name">
+                            <label class="field-label control-label  ng-hide" for="user_identity__first_name" ng-show="preLabelText" si-bind-html="preLabelText">
+  </label>
+                            <!--
+  -->
+                            <!-- ngIf: preInputHtml -->
+                            <!--
+  -->
+
+                            <div class="group field-input">
+                              <label>
+        <span>Card</span>
+        <div id="card-element" class="field StripeElement StripeElement--empty">
+            <div class="__PrivateStripeElement" style="margin: 0px; padding: 0px; border: none; display: block; background: transparent; position: relative; opacity: 1;">
+                <iframe frameborder="0" allowtransparency="true" scrolling="no" name="__privateStripeFrame3" title="Secure payment input frame" src="https://js.stripe.com/v3/elements-inner-card-af2fa21efb5997fa109e353708d1fb6c.html#origin=https%3A%2F%2Fstripe.com&amp;style[base][iconColor]=%23666EE8&amp;style[base][color]=%2331325F&amp;style[base][lineHeight]=40px&amp;style[base][fontWeight]=300&amp;style[base][fontFamily]=%22Helvetica+Neue%22%2C+Helvetica%2C+sans-serif&amp;style[base][fontSize]=15px&amp;style[base][::placeholder][color]=%23CFD7E0&amp;componentName=card&amp;wait=false&amp;controllerId=__privateStripeController0&amp;features[noop]=false&amp;features[12345_postal_placeholder_split_fields]=false" style="border: none; margin: 0px; padding: 0px; width: 1px; min-width: 100%; overflow: hidden; display: block; height: 40px;">
+</iframe>
+<input class="__PrivateStripeElement-input" aria-hidden="true" style="border: none; display: block; position: absolute; height: 1px; top: 0px; left: 0px; padding: 0px; margin: 0px; width: 100%; opacity: 0; background: transparent;">
+</div>
+</div>
+      </label>
+                            </div>
+
+                            <div class="field-input ">
+
+                              <input type="text" ng-model="user_identity.first_name" required="true" id="user_identity__first_name" name="user_identity__first_name"
+                                placeholder="Type here..." ng-disabled="user_identity.is_id_verified" class="ng-pristine ng-scope ng-invalid ng-invalid-required ng-not-modified ng-touched">
+
+                            </div>
+                            <!--
+  -->
+                            <div class="field-input ng-hide" ng-show="show_secondary_transclude">
+                              <div class="secondary-field">
+                              </div>
+                            </div>
+                            <!--
+  -->
+                            <label class="field-label control-label " for="user_identity__first_name" ng-show="labelText" ng-bind-html="labelText">Legal First Name</label>
+                            <p ng-show="helpText" class="field-help-text ng-hide" ng-class="{'always-show': persistentHelpText}" si-bind-html="helpText">
+                            </p>
+                            <div ng-show="errorMessage" class="field-error-text seamless constraint-required help-block ng-binding ng-hide" ng-bind-html="errorMessage">
+                            </div>
+                          </div>
+                          <!--
+    -->
+                          <div class="xs-16 medium-8 boxed split-1-to-1 transparent field-wrapper field-error-catch collapse ng-isolate-scope unfocused empty"
+                            ng-class="{error: valid, empty: empty, collapsed: collapsed,
+required: required, focused: focused, unfocused: !focused, &quot;no-label-text&quot;: !labelText}" si-form-field="" for="user_identity__last_name"
+                            label-text="Legal Last Name">
+                            <label class="field-label control-label  ng-hide" for="user_identity__last_name" ng-show="preLabelText" si-bind-html="preLabelText">
+  </label>
+                            <!--
+  -->
+                            <!-- ngIf: preInputHtml -->
+                            <!--
+  -->
+                            <div class="field-input ">
+
+                              <input type="text" ng-model="user_identity.last_name" required="true" id="user_identity__last_name" name="user_identity__last_name"
+                                placeholder="Type here..." ng-disabled="user_identity.is_id_verified" class="ng-pristine ng-untouched ng-scope ng-invalid ng-invalid-required ng-not-modified">
+
+                            </div>
+                            <!--
+  -->
+                            <div class="field-input ng-hide" ng-show="show_secondary_transclude">
+                              <div class="secondary-field">
+                              </div>
+                            </div>
+                            <!--
+  -->
+                            <label class="field-label control-label " for="user_identity__last_name" ng-show="labelText" ng-bind-html="labelText">Legal Last Name</label>
+                            <p ng-show="helpText" class="field-help-text ng-hide" ng-class="{'always-show': persistentHelpText}" si-bind-html="helpText">
+                            </p>
+                            <div ng-show="errorMessage" class="field-error-text seamless constraint-required help-block ng-binding ng-hide" ng-bind-html="errorMessage">
+                            </div>
+                          </div>
+                          <!--
+    -->
+                          <div class="xs-16 boxed split-1-to-1 transparent field-wrapper field-error-catch collapse ng-isolate-scope unfocused empty"
+                            ng-class="{error: valid, empty: empty, collapsed: collapsed,
+required: required, focused: focused, unfocused: !focused, &quot;no-label-text&quot;: !labelText}" si-form-field="" for="user_identity__new_address__address_line_1"
+                            label-text="Address Line 1">
+                            <label class="field-label control-label  ng-hide" for="user_identity__new_address__address_line_1" ng-show="preLabelText"
+                              si-bind-html="preLabelText">
+  </label>
+                            <!--
+  -->
+                            <!-- ngIf: preInputHtml -->
+                            <!--
+  -->
+                            <div class="field-input ">
+
+                              <input type="text" ng-model="user_identity.primary_address.address_line_1" required="true" id="user_identity__new_address__address_line_1"
+                                name="user_identity__new_address__address_line_1" placeholder="Type here..." class="ng-pristine ng-untouched ng-scope ng-invalid ng-invalid-required ng-not-modified">
+
+                            </div>
+                            <!--
+  -->
+                            <div class="field-input ng-hide" ng-show="show_secondary_transclude">
+                              <div class="secondary-field">
+                              </div>
+                            </div>
+                            <!--
+  -->
+                            <label class="field-label control-label " for="user_identity__new_address__address_line_1" ng-show="labelText" ng-bind-html="labelText">Address Line 1</label>
+                            <p ng-show="helpText" class="field-help-text ng-hide" ng-class="{'always-show': persistentHelpText}" si-bind-html="helpText">
+                            </p>
+                            <div ng-show="errorMessage" class="field-error-text seamless constraint-required help-block ng-binding ng-hide" ng-bind-html="errorMessage">
+                            </div>
+                          </div>
+                          <!--
+    -->
+                          <div class="xs-16 boxed split-1-to-1 transparent field-wrapper field-error-catch collapse ng-isolate-scope unfocused empty"
+                            ng-class="{error: valid, empty: empty, collapsed: collapsed,
+required: required, focused: focused, unfocused: !focused, &quot;no-label-text&quot;: !labelText}" si-form-field="" for="user_identity__new_address__address_line_2"
+                            label-text="Address Line 2">
+                            <label class="field-label control-label  ng-hide" for="user_identity__new_address__address_line_2" ng-show="preLabelText"
+                              si-bind-html="preLabelText">
+  </label>
+                            <!--
+  -->
+                            <!-- ngIf: preInputHtml -->
+                            <!--
+  -->
+                            <div class="field-input ">
+
+                              <input type="text" ng-model="user_identity.primary_address.address_line_2" id="user_identity__new_address__address_line_2"
+                                name="user_identity__new_address__address_line_2" placeholder="Type here..." class="ng-pristine ng-untouched ng-valid ng-scope ng-not-modified">
+
+                            </div>
+                            <!--
+  -->
+                            <div class="field-input ng-hide" ng-show="show_secondary_transclude">
+                              <div class="secondary-field">
+                              </div>
+                            </div>
+                            <!--
+  -->
+                            <label class="field-label control-label " for="user_identity__new_address__address_line_2" ng-show="labelText" ng-bind-html="labelText">Address Line 2</label>
+                            <p ng-show="helpText" class="field-help-text ng-hide" ng-class="{'always-show': persistentHelpText}" si-bind-html="helpText">
+                            </p>
+                            <div ng-show="errorMessage" class="field-error-text seamless constraint-required help-block ng-binding ng-hide" ng-bind-html="errorMessage">
+                            </div>
+                          </div>
+                          <div class="xs-16 medium-8 boxed split-1-to-1 transparent field-wrapper field-error-catch collapse ng-isolate-scope unfocused"
+                            ng-class="{error: valid, empty: empty, collapsed: collapsed,
+required: required, focused: focused, unfocused: !focused, &quot;no-label-text&quot;: !labelText}" si-form-field="" for="user_identity__new_address__city"
+                            label-text="City">
+                            <label class="field-label control-label  ng-hide" for="user_identity__new_address__city" ng-show="preLabelText" si-bind-html="preLabelText">
+  </label>
+
+                            <div class="field-input ">
+
+
+                            </div>
+                            <div class="field-input ng-hide" ng-show="show_secondary_transclude">
+                              <div class="secondary-field">
+                              </div>
+                            </div>
+                            <label class="field-label control-label " for="user_identity__new_address__city" ng-show="labelText" ng-bind-html="labelText">City</label>
+                            <p ng-show="helpText" class="field-help-text ng-hide" ng-class="{'always-show': persistentHelpText}" si-bind-html="helpText">
+                            </p>
+                            <div ng-show="errorMessage" class="field-error-text seamless constraint-required help-block ng-binding ng-hide" ng-bind-html="errorMessage">
+                            </div>
+                          </div>
+                          <div class="xs-16 medium-8 boxed split-1-to-1 transparent field-wrapper field-error-catch collapse ng-isolate-scope unfocused empty"
+                            ng-class="{error: valid, empty: empty, collapsed: collapsed,
+required: required, focused: focused, unfocused: !focused, &quot;no-label-text&quot;: !labelText}" si-form-field="" for="user_identity__new_address__postal_code"
+                            label-text="Postal Code">
+                            <label class="field-label control-label  ng-hide" for="user_identity__new_address__postal_code" ng-show="preLabelText" si-bind-html="preLabelText">
+  </label>
+                            <div class="field-input ">
+
+                              <input type="text" ng-model="user_identity.primary_address.postal_code" id="user_identity__new_address__postal_code" name="user_identity__new_address__postal_code"
+                                ng-required="require_zip_code" ui-mask-placeholder="#####" placeholder="Type here..." ui-mask=""
+                                model-view-value="true" class="ng-pristine ng-untouched ng-valid ng-scope ng-not-modified ng-valid-required">
+
+                            </div>
+
+                            <div class="field-input ng-hide" ng-show="show_secondary_transclude">
+                              <div class="secondary-field">
+                              </div>
+                            </div>
+
+                            <label class="field-label control-label " for="user_identity__new_address__postal_code" ng-show="labelText" ng-bind-html="labelText">Postal Code</label>
+                            <p ng-show="helpText" class="field-help-text ng-hide" ng-class="{'always-show': persistentHelpText}" si-bind-html="helpText">
+                            </p>
+                            <div ng-show="errorMessage" class="field-error-text seamless constraint-required help-block ng-binding ng-hide" ng-bind-html="errorMessage">
+                            </div>
+                          </div>
+
+                          <div class="xs-16 boxed split-1-to-1 transparent field-wrapper field-error-catch collapse ng-isolate-scope has-feedback unfocused empty"
+                            ng-class="{error: valid, empty: empty, collapsed: collapsed,
+required: required, focused: focused, unfocused: !focused, &quot;no-label-text&quot;: !labelText}" si-form-field="" for="user_identity__phone_number"
+                            label-text="Phone number" help-text="Be sure to include your country code (<strong>+1</strong>&nbsp;for U.S. phone numbers).">
+                            <label class="field-label control-label  ng-hide" for="user_identity__phone_number" ng-show="preLabelText" si-bind-html="preLabelText">
+  </label>
+                            <div class="field-input ng-hide" ng-show="show_secondary_transclude">
+                              <div class="secondary-field">
+                              </div>
+                            </div>
+                            <label class="field-label control-label " for="user_identity__phone_number" ng-show="labelText" ng-bind-html="labelText">Phone number</label>
+                            <p ng-show="helpText" class="field-help-text" ng-class="{'always-show': persistentHelpText}" si-bind-html="helpText">
+                              <span class="ng-scope">Be sure to include your country code (</span>
+                              <strong class="ng-scope">+1</strong>
+                              <span class="ng-scope">&nbsp;for U.S. phone numbers).</span>
+                            </p>
+                            <div ng-show="errorMessage" class="field-error-text seamless constraint-required help-block ng-binding ng-hide" ng-bind-html="errorMessage">
+                            </div>
+                            <span class="form-control-feedback glyphicon glyphicon-remove" style="display: none;">
+</span>
+                            <ul class="no-bullet-list" style="display: none;">
+                              <li class="field-error-text constraint-required help-block">Please fill in this required field.</li>
+                            </ul>
+                          </div>
+                        </div>
+                        <button ng-disabled="disabled" ng-class="{loading: submitting}" type="submit" ng-click="$parent.submit()" class="btn medium darker-si-grey filled expand medium-up-hide ng-binding ng-scope ng-isolate-scope"
+                          text="'Continue'" loading-text="'Saving...'" disabled="disabled"> Continue </button>
+                        <button ng-disabled="disabled" ng-class="{loading: submitting}" type="submit" ng-click="$parent.submit()" class="btn medium darker-si-grey filled right medium-up-show right ng-binding ng-scope ng-isolate-scope"
+                          text="'Continue'" loading-text="'Saving...'" disabled="disabled"> Continue </button>
+
+                      </form>
+                    </div>
+                  </div>
+                  <div class="snippet panel listed collapse-margin accordion-item step account" ng-class="{'active': $state.includes('short_investing.investing.account')}">
+                    <header class="snippet-header clearfix" ng-click="flow_service.account_complete &amp;&amp; flow_service.go_to_account()"
+                      ng-class="{'clickable': flow_service.account_complete}">
+                      <h3 class="snippet-title left">
+                        <span class="medium-up-hide">3.</span> Investor Account</h3>
+                      <p class="counter right">
+                        <span ng-if="!flow_service.account_complete" class="ng-scope">1 of 1</span>
+                      </p>
+                    </header>
+                    <div class="snippet-content collapse ng-scope collapsed" ng-class="{'collapsed': !$state.includes('short_investing.investing.account')}"
+                      ui-view="account">
+                    </div>
+                  </div>
+                  <div class="snippet panel listed collapse-margin accordion-item step funding" ng-class="{'active': $state.includes('short_investing.investing.funding')}">
+                    <header class="snippet-header clearfix" ng-click="flow_service.funding_complete &amp;&amp; flow_service.go_to_funding()"
+                      ng-class="{'clickable': flow_service.funding_complete}">
+                      <h3 class="snippet-title left">
+                        <span class="medium-up-hide">4.</span> Payment Method</h3>
+                      <p class="counter right">
+                        <span ng-if="!flow_service.funding_complete" class="ng-scope">1 of 1</span>
+                      </p>
+                    </header>
+                    <div class="snippet-content collapse ng-scope collapsed" ng-class="{'collapsed': !$state.includes('short_investing.investing.funding')}"
+                      ui-view="funding">
+                    </div>
+                  </div>
+                  <div class="snippet panel listed collapse-margin accordion-item step review" ng-class="{'active': $state.includes('short_investing.investing.review')}">
+                    <header class="snippet-header clearfix" ng-click="flow_service.review_complete &amp;&amp; flow_service.go_to_review()" ng-class="{'clickable': flow_service.review_complete}">
+                      <h3 class="snippet-title left">
+                        <span class="medium-up-hide">5.</span> Review Your Investment</h3>
+                      <p class="counter right">
+                        <span ng-if="!flow_service.review_complete" class="ng-scope">1 of 1</span>
+                      </p>
+                    </header>
+                    <div class="snippet-content collapse ng-scope collapsed" ng-class="{'collapsed': !$state.includes('short_investing.investing.review')}"
+                      ui-view="review">
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

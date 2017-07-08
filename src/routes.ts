@@ -1,3 +1,4 @@
+import { ClDonationComponent } from './app/cl-donation/cl-donation.component';
 import { SeedinvestToclComponent } from './app/seedinvest-tocl/seedinvest-tocl.component';
 import { PaymentsComponent } from './app/payments/payments.component';
 import { ViewInvitationComponent } from './app/view-invitation/view-invitation.component';
@@ -9,7 +10,8 @@ import { CampaignsComponent } from './app/campaigns/campaigns.component';
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-    { path: '', component: SeedinvestToclComponent },
+    { path: '', component: ClDonationComponent },
+    { path: 'home', component: SeedinvestToclComponent },
     { path: 'login', component: LoginComponent },
     { path: 'donate', component: PaymentsComponent },
     { path: 'campaigns', component: CampaignsComponent },
