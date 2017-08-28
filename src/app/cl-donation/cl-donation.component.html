@@ -109,7 +109,9 @@
                       </header>
 
                       <div> <br> No. of Kids:<br>
-                        <span class="badge badge-text">10</span> <span class="badge badge-text">20</span> <span class="badge badge-text">30</span>                        <span class="badge badge-text">Other</span> <br> Amount: $200
+                        <span *ngFor=class="badge badge-text">10</span> 
+                        <span class="badge badge-text">20</span> 
+                        <span class="badge badge-text">30</span>                        <span class="badge badge-text">Other</span> <br> Amount: $200
                       </div>
 
                       <p class="field-help-text always-show darkest-si-grey-copy ng-binding ng-scope" ng-show="deal_needs_share_adjustment &amp;&amp; investment.amount &amp;&amp; adjusted_investment_amount &amp;&amp; investment_adjusted">Your investment will be automatically adjusted to US $500.85, a multiple of the share price of US $1.050,

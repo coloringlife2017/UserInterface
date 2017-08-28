@@ -19,7 +19,8 @@ export class ClDonationComponent implements OnInit {
         },
         "impactUnits": [
           {
-            "unitCost":10
+            "unitCost":10,
+            "donationOptions": [25,50,100]
           }
         ]
       };

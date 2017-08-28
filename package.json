@@ -8,6 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "deploy": "ng build && s3-website deploy dist coloringlife1",
     "e2e": "ng e2e"
   },
   "private": true,
